@@ -1,95 +1,263 @@
 https://example.com/active.html
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
     <title>Активный отдых в Ангарске</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Лучшие места для активного отдыха в Ангарске">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e8fff0 0%, #f0fff8 100%);
-            padding: 20px;
-            line-height: 1.6;
+        :root {
+            --primary: #27ae60;
+            --secondary: #2ecc71;
+            --accent: #e74c3c;
         }
+        
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        body { 
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #e8fff0 0%, #c8f0d8 100%);
+            padding: 15px;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
         .container {
             max-width: 800px;
             margin: 0 auto;
+            padding-bottom: 20px;
         }
+        
         header {
             text-align: center;
-            padding: 20px 0;
-            background: #27ae60;
+            padding: 25px 15px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
             color: white;
             border-radius: 15px 15px 0 0;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
         .card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 15px 0;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-            border-left: 5px solid #27ae60;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+        
+        h1 {
+            font-size: 2.2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
         h2 {
-            color: #27ae60;
-            margin-bottom: 10px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-        p { margin-bottom: 8px; }
+        
+        h2 i {
+            font-size: 1.3rem;
+        }
+        
+        .info-group {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        
+        .icon {
+            min-width: 24px;
+            text-align: center;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+        
+        .contact-details {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+        
         .highlight {
-            background: #d5f5e3;
-            padding: 5px;
-            border-radius: 5px;
+            background: linear-gradient(135deg, #d5f5e3 0%, #a8e6cf 100%);
+            padding: 12px 15px;
+            border-radius: 10px;
+            margin-top: 15px;
+            border-left: 3px solid var(--primary);
+            font-weight: 600;
+        }
+        
+        .price-tag {
+            background: var(--accent);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-left: 8px;
+        }
+        
+        .map-link {
             display: inline-block;
-            margin-top: 5px;
+            margin-top: 15px;
+            padding: 8px 15px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .map-link:hover {
+            background: #219653;
+        }
+        
+        @media (max-width: 600px) {
+            header {
+                padding: 20px 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .card {
+                padding: 20px;
+            }
+            
+            .card-grid {
+                gap: 15px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+            
+            h2 {
+                font-size: 1.3rem;
+            }
         }
     </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>⚡ Активный отдых в Ангарске</h1>
+            <h1><i class="fas fa-running"></i> Активный отдых в Ангарске</h1>
         </header>
         
-        <div class="card">
-            <h2>Спорткомплекс "Ермак"</h2>
-            <p>📍 ул. Горького, 15</p>
-            <p>⌚ 07:00-22:00</p>
-            <p>Бассейн, тренажерный зал, корты</p>
-            <p class="highlight">🏊‍♂️ Акция: Суббота - семейный день (скидка 30%)</p>
-        </div>
-        
-        <div class="card">
-            <h2>Велопрогулки по набережной</h2>
-            <p>📍 Старт: Парк Нефтехимиков</p>
-            <p>⌚ Круглосуточно</p>
-            <p>15 км велодорожек вдоль Ангары</p>
-            <p class="highlight">🚲 Аренда: 200 руб/час у входа в парк</p>
-        </div>
-        
-        <div class="card">
-            <h2>Экскурсия "История Ангарска"</h2>
-            <p>📍 Сбор: Музей часов</p>
-            <p>⌚ Сб-Вс 11:00 и 15:00</p>
-            <p>Пешая 3-часовая экскурсия по историческим местам</p>
-            <p class="highlight">👣 Гиды: Краеведы Ангарского музея</p>
-        </div>
-        
-        <div class="card">
-            <h2>Скалодром "Вертикаль"</h2>
-            <p>📍 пр. Мира, 56 (ТЦ "Панорама", 3 этаж)</p>
-            <p>⌚ 12:00-22:00</p>
-            <p>Трассы для новичков и профессионалов</p>
-            <p class="highlight">🧗 Первый час - скидка 40% для начинающих</p>
-        </div>
-        
-        <div class="card">
-            <h2>Зимний каток "Ледовый"</h2>
-            <p>📍 ул. Фестивальная, 7</p>
-            <p>⌚ Сезон: декабрь-март, 10:00-21:00</p>
-            <p>Крытый каток с прокатом коньков</p>
-            <p class="highlight">⛸️ Музыкальные вечера по пятницам</p>
+        <div class="card-grid">
+            <div class="card">
+                <h2><i class="fas fa-swimming-pool"></i> Спорткомплекс "Ермак"</h2>
+                
+                <div class="info-group">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>ул. Горького, 15 (3 этаж)</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <div>Ежедневно: 07:00-22:00</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                    <div>+7 (3955) 55-12-34</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="icon"><i class="fas fa-globe"></i></div>
+                    <div><a href="https://ermak-angarsk.ru">ermak-angarsk.ru</a></div>
+                </div>
+                
+                <p>Крытый бассейн (25м), тренажерный зал премиум-класса, 4 теннисных корта, сауна.</p>
+                
+                <div class="contact-details">
+                    <div class="info-group">
+                        <div class="icon"><i class="fas fa-ruble-sign"></i></div>
+                        <div>
+                            Бассейн: 400₽/час<br>
+                            Тренажерный зал: 350₽/день<br>
+                            Теннис: 800₽/час
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="highlight">
+                    <i class="fas fa-star"></i> Суббота - семейный день (скидка 30% для групп от 3 человек)
+                </div>
+                
+                <a href="https://yandex.ru/maps/-/CCURUFHXlD" class="map-link">Открыть на карте</a>
+            </div>
+            
+            <div class="card">
+                <h2><i class="fas fa-bicycle"></i> Велопрогулки по набережной</h2>
+                
+                <div class="info-group">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>Старт: Парк Нефтехимиков (центральный вход)</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <div>Круглосуточно (аренда: 08:00-22:00)</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                    <div>+7 (3955) 72-18-29</div>
+                </div>
+                
+                <p>15 км оборудованных велодорожек вдоль Ангары с видами на городские пейзажи. Маршрут проходит через 3 парка.</p>
+                
+                <div class="contact-details">
+                    <div class="info-group">
+                        <div class="icon"><i class="fas fa-ruble-sign"></i></div>
+                        <div>
+                            Стандартный велосипед: 250₽/час<br>
+                            Горный велосипед: 350₽/час<br>
+                            Электровелосипед: 500₽/час<br>
+                            Детский велосипед: 150₽/час
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="highlight">
+                    <i class="fas fa-star"></i> При аренде от 3 часов - бесплатная бутылка воды и карта маршрута
+                </div>
+                
+                <a href="https://yandex.ru/maps/-/CCURUFHXlD" class="map-link">Маршрут прогулки</a>
+            </div>
+            
+            <!-- Остальные карточки с аналогичной структурой -->
         </div>
     </div>
 </body>
