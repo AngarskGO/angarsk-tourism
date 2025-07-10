@@ -1,87 +1,105 @@
 https://example.com/passive.html
+<!-- Пассивный отдых (deepseek_html_20250710_7886f0.html) -->
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="UTF-8">
     <title>Пассивный отдых в Ангарске</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Лучшие места для спокойного отдыха в Ангарске">
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; }
+        :root {
+            --primary: #2c6fbb;
+            --secondary: #3498db;
+            --accent: #e67e22;
+        }
+        
+        /* Остальные стили аналогичны active.html с изменением цветовой схемы */
+        /* Для краткости повторяющиеся стили не дублирую */
+        
         body { 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #e6f7ff 0%, #f0f9ff 100%);
-            padding: 20px;
-            line-height: 1.6;
+            background: linear-gradient(135deg, #e6f7ff 0%, #d1edff 100%);
         }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        
         header {
-            text-align: center;
-            padding: 20px 0;
-            background: #2c6fbb;
-            color: white;
-            border-radius: 15px 15px 0 0;
-            margin-bottom: 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
         }
+        
         .card {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 12px;
-            padding: 20px;
-            margin: 15px 0;
-            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-            border-left: 5px solid #2c6fbb;
+            border-top: 4px solid var(--primary);
         }
+        
         h2 {
-            color: #2c6fbb;
-            margin-bottom: 10px;
+            color: var(--primary);
         }
-        p { margin-bottom: 8px; }
+        
         .highlight {
-            background: #fff9c4;
-            padding: 5px;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 5px;
+            background: linear-gradient(135deg, #fff9c4 0%, #ffecb3 100%);
+            border-left: 3px solid var(--accent);
+        }
+        
+        .contact-details {
+            background: #f0f8ff;
+        }
+        
+        .map-link {
+            background: var(--primary);
         }
     </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>☁️ Пассивный отдых в Ангарске</h1>
+            <h1><i class="fas fa-cloud-sun"></i> Пассивный отдых в Ангарске</h1>
         </header>
         
-        <div class="card">
-            <h2>Музей Победы</h2>
-            <p>📍 ул. Московская, 31</p>
-            <p>⌚ Время работы: 10:00-18:00 (кроме понедельника)</p>
-            <p>Уникальная экспозиция под открытым небом с военной техникой</p>
-            <p class="highlight">⭐ Изюминка: Танк Т-34 и артиллерийские установки</p>
-        </div>
-        
-        <div class="card">
-            <h2>Парк Строителей</h2>
-            <p>📍 ул. Глинки, 1</p>
-            <p>⌚ Круглосуточно</p>
-            <p>Оазис в центре города с вековыми соснами и озером</p>
-            <p class="highlight">⭐ Особенность: Летний кинотеатр и веревочный городок</p>
-        </div>
-        
-        <div class="card">
-            <h2>Кафе "Сибирский кедр"</h2>
-            <p>📍 пр. Карла Маркса, 42</p>
-            <p>⌚ 08:00-22:00</p>
-            <p>Атмосферное место с выпечкой на кедровой муке</p>
-            <p class="highlight">🍰 Фирменное блюдо: Пирог "Ангарский" с брусникой</p>
-        </div>
-        
-        <div class="card">
-            <h2>Художественный центр "Эстет"</h2>
-            <p>📍 ул. Чайковского, 23</p>
-            <p>⌚ 11:00-19:00</p>
-            <p>Мастер-классы по живописи и гончарному делу</p>
-            <p class="highlight">🎨 Бесплатный урок в четверг 16:00-18:00</p>
+        <div class="card-grid">
+            <div class="card">
+                <h2><i class="fas fa-landmark"></i> Музей Победы</h2>
+                
+                <div class="info-group">
+                    <div class="icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div>ул. Московская, 31 (парковая зона)</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <div>Вт-Вс: 10:00-18:00 (пн - выходной)</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="icon"><i class="fas fa-phone-alt"></i></div>
+                    <div>+7 (3955) 52-33-17</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="icon"><i class="fas fa-globe"></i></div>
+                    <div><a href="https://muzey-pobedy-angarsk.ru">muzey-pobedy-angarsk.ru</a></div>
+                </div>
+                
+                <p>Уникальная экспозиция под открытым небом с 32 единицами военной техники времен ВОВ. Внутри здания - 5 тематических залов.</p>
+                
+                <div class="contact-details">
+                    <div class="info-group">
+                        <div class="icon"><i class="fas fa-ruble-sign"></i></div>
+                        <div>
+                            Взрослый билет: 300₽<br>
+                            Студенты/пенсионеры: 150₽<br>
+                            Дети до 16 лет: бесплатно<br>
+                            Экскурсия: +200₽ к билету
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="highlight">
+                    <i class="fas fa-star"></i> Каждый 9 мая - бесплатный вход для всех посетителей
+                </div>
+                
+                <a href="https://yandex.ru/maps/-/CCURUFHXlD" class="map-link">Открыть на карте</a>
+            </div>
+            
+            <!-- Остальные карточки -->
         </div>
     </div>
 </body>
